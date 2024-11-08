@@ -1,0 +1,53 @@
+#background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+#background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.2); /* Aumenta o contraste e ajusta o brilho */
+}
+
+#background::after {
+    content: '';
+    width: inherit;
+    height: 100%;
+    position: inherit;
+    inset: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.95) 15%, rgba(10, 12, 16, 0.6) 50%, rgba(10, 12, 16, 0.95) 85%);
+    mix-blend-mode: multiply; /* Garante uma mistura suave do gradiente com o vídeo */
+}
+
+/* Responsividade para telas médias */
+@media (max-width: 768px) {
+    #background {
+        height: 100vh; /* Reduz a altura para telas médias */
+    }
+
+    #background video {
+        object-fit: cover;
+        filter: brightness(0.85) contrast(1.1); /* Ajuste leve no brilho e contraste para telas médias */
+    }
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 480px) {
+    #background {
+        height: 100vh; /* Ajusta a altura para telas pequenas */
+    }
+
+    #background video {
+        object-fit: contain;
+        filter: brightness(0.9) contrast(1); /* Ajuste para manter o vídeo claro em telas menores */
+    }
+
+    #background::after {
+        background: linear-gradient(109deg, rgba(10, 12, 16, 0.95) 20%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.95) 80%);
+        mix-blend-mode: multiply; /* Preserva o efeito de fusão para melhores resultados em telas menores */
+    }
+}

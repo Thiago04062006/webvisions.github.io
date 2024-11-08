@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #8d58e2; /* Cor de fundo que remete à sustentabilidade */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.loading-container {
+    text-align: center;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Cor do fundo do loader */
+    border-top: 16px solid #a407ff; /* Cor do topo do loader */
+    border-radius: 50%;
+    width: 80px; /* Largura do loader */
+    height: 80px; /* Altura do loader */
+    animation: spin 2s linear infinite; /* Animação de rotação */
+    margin: 0 auto 20px; /* Margem para centralizar */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+h1 {
+    font-size: 28px; /* Tamanho da fonte do texto de carregamento */
+    color: #ffffff; /* Cor do texto */
+}

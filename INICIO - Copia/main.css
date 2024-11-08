@@ -1,0 +1,293 @@
+/* Definindo um espaçamento padronizado */
+:root {
+    --spacing: 20px; /* Espaçamento padrão */
+    --image-height: 400px; /* Altura padronizada para imagens */
+    --text: #000; /* Definindo uma cor padrão para o texto */
+}
+
+* {
+ 
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura e altura */
+}
+
+/* Texto principal */
+#text-principal {
+    padding: 40px 20px;
+    margin: 20px;
+    text-align: left;
+    font-size: 24px;
+    padding-top: 60px;
+    overflow: hidden; 
+}
+
+#text-principal p {
+    font-size: 21px; /* Fonte para parágrafos */
+    margin-bottom: var(--spacing); /* Espaçamento entre parágrafos */
+    overflow: hidden; 
+}
+
+/* Principal */
+#principal {
+    margin: 40px 0; /* Espaçamento vertical */
+    overflow: hidden; 
+}
+
+/* Botão */
+#btn {
+    border-radius: 25px;
+    border: solid 1px rgb(255, 255, 255);
+    width: 120px;
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 30px;
+    padding: 10px;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+    color: var(--text);
+    overflow: hidden; 
+    margin: 3px;
+}
+
+#btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+#btn:focus {
+    outline: 2px solid #000; /* Adiciona um contorno para acessibilidade */
+}
+
+#btn-cont {
+    position: inherit;
+    padding-top: 1px;
+    margin-top: 20px;
+    overflow: hidden; 
+}
+
+/* Main 2 */
+.cont0, .cont1, .cont2, .cont3, .cont4 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: var(--spacing);
+    overflow: hidden; 
+}
+
+#apresentation0, #apresentation1, #apresentation2, #apresentation3, #apresentation4 {
+    display: flex;
+    align-items: flex-start; /* Ajuste para alinhar à esquerda */
+    flex-wrap: wrap;
+    margin: 25px 0;
+    overflow: hidden; 
+}
+
+#apresentation0 img, 
+#apresentation1 img, 
+#apresentation2 img, 
+#apresentation3 img, 
+#apresentation4 img {
+    width: auto; /* Mantém a proporção */
+    height: var(--image-height); /* Altura padronizada */
+    border-radius: 10px; /* Bordas arredondadas */
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.textapre0, .textapre1, .textapre2, .textapre3, .textapre4 {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%; /* Largura ajustada */
+    margin-right: 5%; /* Distância entre texto e imagem */
+    text-align: justify;
+    overflow: hidden; 
+}
+
+.titleapre0, .titleapre1, .titleapre2, .titleapre3, .titleapre4 {
+    line-height: 34px;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    overflow: hidden; 
+    margin: var(--spacing) 0 10px 0; /* Margem ajustada */
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; 
+    padding: 0 20px; /* Ajustei padding para dar espaço nas laterais */
+}
+
+/* Estilos para o vídeo responsivo */
+#responsiveVideo {
+    width: 50%;
+    height: 100vh;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden; 
+    overflow: hidden; /* Remove a barra de rolagem no vídeo */
+}
+
+/* Estilos para o carrossel */
+.carousel-container {
+    width: 45vw; 
+    max-width: 400px;
+    overflow: hidden; /* Remove a barra de rolagem no carrossel */
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden; 
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: var(--image-height); /* Altura padronizada */
+    object-fit: cover; /* Cobre o espaço sem distorcer a imagem */
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    overflow: hidden; 
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    overflow: hidden; 
+    font-size: 18px;
+}
+
+/* Animação de desvanecimento e deslizamento com tempo prolongado */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animação para o botão com transição mais lenta */
+
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+    #text-principal {
+        font-size: 22px;
+        padding-top: 40px;
+    }
+
+    #text-principal p {
+        font-size: 16px;
+    }
+
+    .cont0, .cont1, .cont2, .cont3, .cont4 {
+        flex-direction: column;
+        align-items: flex-start; /* Alinhar ao início da coluna */
+        margin-bottom: 20px;
+    }
+
+    .textapre0, .textapre1, .textapre2, .textapre3, .textapre4 {
+        width: 100%; /* Texto ocupa 100% da largura */
+        margin-right: 0;
+        margin-bottom: 15px; /* Espaço entre texto e imagem */
+    }
+
+    .imageback0, .imageback1, .imageback2, .imageback3, .imageback4 {
+        width: 100%; /* Imagem ocupa 100% da largura */
+        height: auto;
+        margin-top: 15px;
+    }
+
+    #btn {
+        width: 90px;
+        padding: 8px;
+    }
+}
+
+/* Ajuste adicional para telas menores */
+@media (max-width: 480px) {
+    #text-principal {
+        font-size: 18px;
+        padding-top: 30px;
+    }
+
+    #text-principal p {
+        font-size: 14px;
+    }
+
+    .titleapre0, .titleapre1, .titleapre2, .titleapre3, .titleapre4 {
+        font-size: 20px;
+    }
+
+    .textapre0, .textapre1, .textapre2, .textapre3, .textapre4 {
+        font-size: 14px;
+    }
+
+    .imageback0, .imageback1, .imageback2, .imageback3, .imageback4 {
+        width: 100%;
+        margin-top: 10px;
+        height: auto;
+    }
+
+    #btn {
+        width: 80px;
+        padding: 6px;
+    }
+}
+
+/* Ajuste específico para telas muito pequenas */
+@media (max-width: 390px) {
+    #text-principal {
+        font-size: 17px;
+    }
+
+    #text-principal p {
+        font-size: 13px;
+    }
+
+    .titleapre0, .titleapre1, .titleapre2, .titleapre3, .titleapre4 {
+        font-size: 18px;
+    }
+
+    .textapre0, .textapre1, .textapre2, .textapre3, .textapre4 {
+        font-size: 13px;
+    }
+
+    .imageback0, .imageback1, .imageback2, .imageback3, .imageback4 {
+        height: auto; /* Manter a proporção da imagem */
+    }
+
+    #btn {
+        width: 70px;
+        padding: 4px;
+    }
+}

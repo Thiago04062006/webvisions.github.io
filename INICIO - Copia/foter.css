@@ -1,0 +1,125 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap; /* Permite que os elementos se reordenem em telas menores */
+    padding: 70px;
+}
+
+.logo {
+    width: 100px;
+    margin-top: -30px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.menu, .contato, .endereco {
+    text-align: left;
+    width: 300px;
+    margin-bottom: 30px; /* Adiciona margem inferior para dar espaçamento em telas menores */
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+li a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+li a:hover {
+    color: var(--blue);
+}
+
+.copyright {
+    text-align: center;
+    padding: 1px;
+    color: #ffffffad;
+    font-size: 0.6rem;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.navigation_social {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    margin-left: 30px;
+    gap: 20px;
+}
+
+.navigation_social svg {
+    width: 25px;
+    height: 25px;
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navigation_social svg:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px;
+        flex-direction: column; /* Coloca os itens um abaixo do outro */
+        align-items: center; /* Centraliza os itens em telas menores */
+    }
+
+    .menu, .contato, .endereco {
+        width: 100%; /* Cada seção ocupa a largura total da tela */
+        text-align: center; /* Centraliza o texto em telas menores */
+    }
+
+    .navigation_social {
+        justify-content: center; /* Centraliza os ícones sociais em telas menores */
+        margin-left: 0; /* Remove a margem lateral */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .logo {
+        width: 80px; /* Diminui o tamanho da logo em telas pequenas */
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    li a {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte dos links em telas pequenas */
+    }
+
+    .copyright p {
+        font-size: 12px; /* Ajuste de tamanho de fonte para melhor leitura */
+    }
+
+    .navigation_social svg {
+        width: 20px; /* Diminui o tamanho dos ícones sociais */
+        height: 20px;
+    }
+}

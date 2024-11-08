@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+#docContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    overflow-x: hidden;
+    align-items: center;
+    padding: 25px;
+}
+
+#textArea {
+    width: 25%; /* Reduz a largura do texto */
+    padding: 20px 10px;
+    box-sizing: border-box;
+    margin: 0; /* Remove margem para reduzir o espaçamento */
+}
+
+#videoArea {
+    width: 75%; /* Aumenta a largura do vídeo */
+    background-color: white;
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+#videoWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#responsiveVideo {
+    width: 90%; /* Aumenta o vídeo para ocupar 90% do contêiner de vídeo */
+    max-width: 1000px; /* Limite máximo do vídeo */
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.titleDoc {
+    line-height: 1.5;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 20px 0 10px 0;
+}
+
+.textD {
+    font-size: 21px;
+    text-align: justify;
+    width: 100%;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    #docContainer {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    #textArea,
+    #videoArea {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .titleDoc {
+        font-size: 24px;
+        text-align: center;
+        margin: 0 auto 20px;
+    }
+
+    #videoWrapper {
+        order: 2;
+    }
+
+    #textArea {
+        order: 3;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #docContainer {
+        padding: 0 10px;
+    }
+
+    #videoArea,
+    #textArea {
+        padding: 10px;
+    }
+
+    .titleDoc {
+        font-size: 22px;
+    }
+
+    .textD {
+        font-size: 16px;
+        width: 100%;
+    }
+}
